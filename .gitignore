@@ -1,0 +1,9 @@
+
+# IDE files
+.vscode
+
+# Ignore development config files
+/library.api/dev.cfg
+
+# Ignore venv build files
+/env
