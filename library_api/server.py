@@ -10,9 +10,8 @@ load_database(iris_native)
 # Get all books
 @app.route('/books')
 def get_all_books():
-    book_iter = iris_native.iterator('^books')
-    for key,value in book_iter.items():
-        print(f'{key} : {value}')
+    book = iris_native.get("^books")
+    print(book)
 
     return 'test2'
 

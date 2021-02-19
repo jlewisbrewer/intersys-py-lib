@@ -3,7 +3,7 @@
 .vscode
 
 # Ignore development config files
-/library.api/dev.cfg
+/library_api/dev.cfg
 
 # Ignore venv build files
 /env
