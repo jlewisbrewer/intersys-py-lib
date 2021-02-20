@@ -4,7 +4,7 @@ import { BookContext } from '../../contexts/book-context'
 
 function Search() {
 
-  const {books, setBooks} = useContext(BookContext)
+  const {books} = useContext(BookContext)
   const numResults = books.length
 
   console.log(books.length);
