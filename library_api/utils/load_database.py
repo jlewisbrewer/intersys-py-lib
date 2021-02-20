@@ -7,7 +7,7 @@ def load_database(iris_native):
     iris_native.kill(book_db)
 
     book_list = []
-    with open('library_api/data/books.csv') as f:
+    with open('data/books.csv') as f:
         lines = f.readlines()
 
         for line in lines:

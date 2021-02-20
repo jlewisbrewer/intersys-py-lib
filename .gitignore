@@ -6,4 +6,4 @@
 /library_api/dev.cfg
 
 # Ignore venv build files
-/env
+/library_api/env

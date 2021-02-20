@@ -1,6 +1,6 @@
 import irisnative
 
-CONFIG_FILE = 'library_api/dev.cfg'
+CONFIG_FILE = 'dev.cfg'
 
 def get_connnection_info(file_name):
     connection_info = {}
