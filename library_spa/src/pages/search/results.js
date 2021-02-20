@@ -1,22 +1,35 @@
-import { useContext} from 'react';
-import { BookContext } from '../../contexts/book-context'
-
+import { useContext } from "react";
+import { BookContext } from "../../contexts/book-context";
 
 function Search() {
-
-  const {books} = useContext(BookContext)
-  const numResults = books.length
+  const { books } = useContext(BookContext);
+  const numResults = books.length;
 
   console.log(books.length);
   return (
     <div className="results-container">
       <div className="results-header">
-      <h1>Your search yielded {numResults} results:</h1>
+        <h1>Your search yielded {numResults} result(s):</h1>
       </div>
       <div>
-        {books.map(function(b, i){
-          return <li key={i}>{b.title}</li>
+        <ul>
+        {books.map(function (book, i) {
+          return (
+            <li>
+            <div className="book-card">
+              <img className="book-card-image" alt="cover art of book" src={book.pic_url}/>
+              <div className="book-card-text">
+              <p className="book-card-text-info">Title: {book.title}</p>
+              <p className="book-card-text-info"> Author: {book.author}</p>
+              <p className="book-card-text-info">Publisher: {book.publisher}</p>
+              <p className="book-card-text-info">Page count: {book.page_count} pages</p>
+              <p className="book-card-text-info-checkout">Available for check out</p>
+              </div>
+            </div>
+            </li>
+          );
         })}
+        </ul>
       </div>
     </div>
   );

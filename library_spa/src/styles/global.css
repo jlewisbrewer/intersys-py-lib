@@ -1,118 +1,148 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 :root {
-	--dark-color-a: #1a1a1d;
-	--dark-color-b: #4e4e50;
-	--light-color: lightgrey;
-	--success-color: #5cb85c;
-	--error-color: #d9534f;
+  --dark-color-a: #1a1a1d;
+  --dark-color-b: #4e4e50;
+  --light-color: lightgrey;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
 }
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font-family: 'Roboto Slab', sans-serif;
-	font-size: 16px;
-	background: var(--light-color);
-	margin: 20px;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 16px;
+  background: var(--light-color);
+  margin: 20px;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .btn {
-	cursor: pointer;
-	padding: 5px 15px;
-	background: var(--light-color);
-	color: var(--dark-color-a);
-	border: 0;
-	font-size: 17px;
+  cursor: pointer;
+  padding: 5px 15px;
+  background: var(--light-color);
+  color: var(--dark-color-a);
+  border: 0;
+  font-size: 17px;
 }
 
-.results-container{
+.results-container {
 }
 
 .results-header {
-	text-align: left;
-	padding: 20px;
-	background: var(--dark-color-a);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	font-size: 28px;
-	font-style: em;
-	color: #fff;
+  text-align: left;
+  padding: 20px;
+  background: var(--dark-color-a);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 28px;
+  font-style: em;
+  color: #fff;
 }
+
+.book-card {
+  padding: 20px;
+  background: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-style: solid;
+  display: flex;
+  font-size: 22px;
+  font-style: em;
+}
+
+.book-card-image {
+  padding: 5px;
+  padding-right: 50px;
+}
+
+.book-card-text {
+  font-family: "Roboto", sans-serif;
+}
+
+.book-card-text-info, .book-card-text-info-checkout {
+	padding: 5px;
+}
+
+.book-card-text-info-checkout {
+	color: var(--success-color);
+}
+
 /* Join Page */
 .join-container {
-	max-width: 1000px;
-	margin: 80px auto;
-	color: #fff;
+  max-width: 1000px;
+  margin: 80px auto;
+  color: #fff;
 }
 
 .join-header {
-	text-align: center;
-	padding: 20px;
-	background: var(--dark-color-a);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	font-size: 36px;
-	font-style: em;
-	font-variant: small-caps;
+  text-align: center;
+  padding: 20px;
+  background: var(--dark-color-a);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 36px;
+  font-style: em;
+  font-variant: small-caps;
 }
 
 .join-main {
-	padding: 30px 40px;
-	background: var(--dark-color-b);
+  padding: 30px 40px;
+  background: var(--dark-color-b);
 }
 
 .join-main p {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .join-main .form-control {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .join-main label {
-	display: block;
-	margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.join-main input[type='text'] {
-	font-size: 16px;
-	padding: 5px;
-	height: 40px;
-	width: 100%;
+.join-main input[type="text"] {
+  font-size: 16px;
+  padding: 5px;
+  height: 40px;
+  width: 100%;
 }
 
 .join-main select {
-	font-size: 16px;
-	padding: 5px;
-	height: 40px;
-	width: 100%;
+  font-size: 16px;
+  padding: 5px;
+  height: 40px;
+  width: 100%;
 }
 
 .join-main .btn {
-	margin-top: 20px;
-	width: 100%;
-	font-size: 20px;
+  margin-top: 20px;
+  width: 100%;
+  font-size: 20px;
 }
 
 @media (max-width: 700px) {
-	.chat-main {
-		display: block;
-	}
+  .chat-main {
+    display: block;
+  }
 
-	.chat-sidebar {
-		display: none;
-	}
+  .chat-sidebar {
+    display: none;
+  }
 }

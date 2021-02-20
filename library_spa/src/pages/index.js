@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useRouter } from "next/router";
-import {BookContext} from "../contexts/book-context"
+import { BookContext } from "../contexts/book-context";
 
 export default function Home() {
   const router = useRouter();
@@ -10,25 +10,32 @@ export default function Home() {
     publisher: "",
   });
 
-  const { setBooks} = useContext(BookContext)
+  const { setBooks } = useContext(BookContext);
 
   const handleChange = (e) =>
     setContact({ ...contact, [e.target.name]: e.target.value });
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(contact.author);
     let url = "http://localhost:5000/books?";
+
     if (contact.author) {
       url += "author=" + contact.author + "&&";
     }
+    if (contact.title) {
+      url += "title=" + contact.title + "&&";
+    }
+    if (contact.publisher) {
+      url += "publisher=" + contact.publisher + "&&";
+    }
+
     const res = await fetch(url, {
       method: "GET",
     });
 
     const booksToReturn = await res.json();
-    setBooks(booksToReturn)
-    console.log(booksToReturn);
+    setBooks(booksToReturn);
+
     router.push({
       pathname: "/search/results",
       query: {
