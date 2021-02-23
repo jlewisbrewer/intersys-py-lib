@@ -16,12 +16,7 @@ This project requires an instance of InterSystems IRIS running on your machine. 
   - Mac: `pip install _install/irisnative-1.0.0-cp34-abi3-macosx_10_13_x86_64.macosx_10_14_x86_64.whl`
   - Linux `pip install _install/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl`
 
-Additionally install flask by `pip install flask`.
-
-To run the server, navigate to the `library_api` folder and type `python server.py` in a terminal.
+This project uses `pipenv` to run the program. Pipenv is a python packaging manager that will automatically download and install the packages needed to run the program. Install `pipenv` by typing `python[3] -m pip install pipenv`. To run the program, navigate to the `library_api` folder and type `pipenv run python[3] server.py` in a terminal. This should download the required modules and start a server.
 
 To run the frontend, navigate to `libary_spa` folder and type `npm run start` in a terminal. Go to `http://localhost:3000/` to interact with the client locally.
 
-## Todo
-
-- make a python build file
