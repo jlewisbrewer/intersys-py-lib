@@ -4,15 +4,20 @@ import json
 from utils.load_database import load_database
 from utils.connect_database import connect_database
 from utils.search_database import get_all_books, get_book_by_params, get_book_by_id
+from ruamel.yaml import YAML
+from pathlib import Path
 
+path = Path('settings.yaml')
+yaml = YAML(typ='safe')
+data = yaml.load(path)
 app = Flask(__name__)
 iris_native = connect_database()
 load_database(iris_native)
+book_db = data['database']
 
 # Get all books
 @app.route('/books', methods=['GET'])
 def get_books():
-    book_db = "^books"
     books = iris_native.iterator(book_db)
     books_to_return = []
     
@@ -26,7 +31,6 @@ def get_books():
 # Update book by id
 @app.route('/update/book/<id>', methods=['POST'])
 def update_book(id):
-    book_db = "^books"
     field = "available"
 
     # This outer conditional does not work as intended, will set values
@@ -39,11 +43,7 @@ def update_book(id):
         return Response('Changed book availablitiy', status=200)
 
     return Response('Unable to find book', status=404)
-
-
-
-
-
+    
 
 if __name__ == '__main__':
     app.run()

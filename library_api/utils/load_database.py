@@ -1,8 +1,14 @@
 # Loads book information into the database
 from models.book import Book
+from ruamel.yaml import YAML
+from pathlib import Path
+
+path = Path('settings.yaml')
+yaml = YAML(typ='safe')
+data = yaml.load(path)
 
 def load_database(iris_native):
-    book_db = "^books"
+    book_db = data['database']
 
     iris_native.kill(book_db)
 
