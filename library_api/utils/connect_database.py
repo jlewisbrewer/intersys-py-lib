@@ -1,6 +1,15 @@
 import irisnative
+from ruamel.yaml import YAML
+from pathlib import Path
 
-CONFIG_FILE = 'dev.cfg'
+path = Path('settings.yaml')
+yaml = YAML(typ='safe')
+data = yaml.load(path)
+
+CONFIG_FILE = 'connection.cfg'
+
+if not data['production']:
+    CONFIG_FILE = 'dev.cfg'
 
 def get_connnection_info(file_name):
     connection_info = {}

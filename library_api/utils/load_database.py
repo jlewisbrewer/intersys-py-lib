@@ -22,6 +22,7 @@ def load_database(iris_native):
         book.publisher = book_info[2]
         book.page_count = book_info[3]
         book.pic_url = book_info[4]
+        book.available = True
 
 
         iris_native.set(book.title, book_db, i, "title")
@@ -29,5 +30,6 @@ def load_database(iris_native):
         iris_native.set(book.publisher, book_db, i, "publisher")
         iris_native.set(book.page_count, book_db, i, "page_count")
         iris_native.set(book.pic_url, book_db, i, "pic_url")
+        iris_native.set(book.available, book_db, i, "available")
 
     print("Loaded books into database")

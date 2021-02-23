@@ -1,5 +1,6 @@
 from models.book import Book
 
+# Associates a book in the DB with a book type
 def initialize_book(iris_native, book_db, id):
     book = Book()
     book.id = id
@@ -22,7 +23,8 @@ def get_all_books(iris_native, books, book_db):
 
 def get_specific_book(iris_native, books, book_db, args):
     res = []
-    print(args)
+
+    # Return if searching for one book
     if "id" in args:
         id = args["id"]
         res.append(initialize_book(iris_native, book_db, id))
