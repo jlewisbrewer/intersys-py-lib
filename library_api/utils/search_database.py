@@ -20,29 +20,26 @@ def get_all_books(iris_native, books, book_db):
 
     return res
 
+def get_book_by_id(iris_native, book_db, id):
+    return [initialize_book(iris_native, book_db, id)]
 
-def get_specific_book(iris_native, books, book_db, args):
+
+def get_book_by_params(iris_native, books, book_db, args):
     res = []
 
     # Return if searching for one book
     if "id" in args:
-        id = args["id"]
-        res.append(initialize_book(iris_native, book_db, id))
-        return res
+        return get_book_by_id(iris_native, book_db, args['id'])
     
     ids = []
 
-    for item in args.keys():
-        print(item)
-
-    print(iris_native.get(book_db, 5))
     for k, _ in books:
         # Need to match all of them
         l = len(args)
         count = 0
         for item in args.keys():
             # Need try catch here
-            if args[item] == iris_native.get(book_db, k, item):
+            if args[item] in iris_native.get(book_db, k, item):
                 count += 1
         if count == l:
             ids.append(k)             
