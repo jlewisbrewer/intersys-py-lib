@@ -21,7 +21,9 @@ def get_all_books(iris_native, books, book_db):
     return res
 
 def get_book_by_id(iris_native, book_db, id):
-    return [initialize_book(iris_native, book_db, id)]
+    if iris_native.isDefined(book_db, id):
+        return [initialize_book(iris_native, book_db, id)]
+    return False
 
 
 def get_book_by_params(iris_native, books, book_db, args):

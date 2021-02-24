@@ -28,22 +28,31 @@ def get_books():
 
     return json.dumps([book.__dict__ for book in books_to_return])
 
-# Update book by id
-@app.route('/update/book/<id>', methods=['POST'])
-def update_book(id):
+# Check out a book
+@app.route('/update/book/<id>/checkout', methods=['GET'])
+def check_out_book(id):
     field = "available"
 
-    # This outer conditional does not work as intended, will set values
-    # on books that don't exist
     if get_book_by_id(iris_native, book_db, id):
         if iris_native.get(book_db, id, field):
             iris_native.set(False, book_db, id, field)
-        else:
-            iris_native.set(True, book_db, id, field)
-        return Response('Changed book availablitiy', status=200)
+            return Response('Checked out book\n', status=200)
+        return Response('Book already checked out\n', status=400)
 
-    return Response('Unable to find book', status=404)
-    
+    return Response('Unable to find book\n', status=400)
+
+# Check in book
+@app.route('/update/book/<id>/checkin', methods=['GET'])
+def check_in_book(id):
+    field = "available"
+
+    if get_book_by_id(iris_native, book_db, id):
+        if not iris_native.get(book_db, id, field):
+            iris_native.set(True, book_db, id, field)
+            return Response('Checked in book\n', status=200)
+        return Response('Book already checked in\n', status=400)
+    return Response('Unable to find book\n', status=400)
+
 
 if __name__ == '__main__':
     app.run()
