@@ -95,6 +95,7 @@ a {
 
 .book-card-buttons {
   display: flex;
+  max-width: 300px;
   flex-direction: column;
   flex: 2;
   align-items: center;
@@ -164,7 +165,7 @@ a {
   font-size: 20px;
 }
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .chat-main {
     display: block;
   }
@@ -172,4 +173,4 @@ a {
   .chat-sidebar {
     display: none;
   }
-}
+} */
