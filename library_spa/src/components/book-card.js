@@ -2,8 +2,7 @@ import { useState } from "react";
 
 function BookCard(props) {
     const baseUrl = "http://localhost:5000/update/book/";
-    const [available, setAvailable] = useState(props.book.available)
-    // console.log("Available: " + available);
+    const [, setAvailable] = useState(props.book.available)
 
     async function changeBookAvail(avail) {
         let flag = 0
@@ -23,12 +22,10 @@ function BookCard(props) {
       }
     
       const checkOutBook = (e) => {
-        // console.log("checking out book..." + props.book.id);
         return changeBookAvail("out");
       };
     
       const checkInBook = (e) => {
-        // console.log("checking in book...");
         return changeBookAvail("in");
       };
 
