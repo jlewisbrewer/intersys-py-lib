@@ -7,9 +7,8 @@ export const BookContext = createContext({
     setBooks: () => {},
 });
 
-
 export const BookContextProvider = (props) => {
-
+  
     const setBooks = (books) => {
       setState({...state, books: books})
     }
