@@ -3,11 +3,17 @@ A library application that connects to an Inter Systems IRIS database. This proj
 
 ## Preview
 
-Initial Page
+Initial Page:
+
 [![initial page](https://i.postimg.cc/1tP9JrCf/Screen-Shot-2021-02-20-at-2-53-33-PM.png)](https://postimg.cc/9485fZjh)
 
-Results Page
-[![results page](https://i.postimg.cc/x88V4xKT/Screen-Shot-2021-02-20-at-2-55-50-PM.png)](https://postimg.cc/Q92zBq4R)
+Results Page:
+
+[![results page](https://i.postimg.cc/qRNYB9n5/Screen-Shot-2021-02-25-at-1-20-30-PM.png)](https://postimg.cc/YGw8bDd6)
+
+Check-in/Check-out books:
+
+[![check-out-book](https://i.postimg.cc/tC3cgdZp/Screen-Shot-2021-02-25-at-1-23-04-PM.png)](https://postimg.cc/rKpjnrNP)
 
 ## Installation
 
