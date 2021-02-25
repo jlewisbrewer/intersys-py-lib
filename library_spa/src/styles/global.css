@@ -56,6 +56,7 @@ a {
 .book-card {
   padding: 20px;
   background: white;
+  justify-content: space-between;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-style: solid;
@@ -64,21 +65,47 @@ a {
   font-style: em;
 }
 
+.book-card-info {
+  display: flex;
+  flex-grow: 3;
+
+}
+
 .book-card-image {
   padding: 5px;
   padding-right: 50px;
 }
 
 .book-card-text {
+
   font-family: "Roboto", sans-serif;
 }
 
-.book-card-text-info, .book-card-text-info-checkout {
+.book-card-text-info, .book-card-text-avail, .book-card-text-not-avail {
 	padding: 5px;
 }
 
-.book-card-text-info-checkout {
+.book-card-text-avail {
 	color: var(--success-color);
+}
+
+.book-card-text-not-avail {
+  color: var(--error-color);
+}
+
+.book-card-buttons {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  align-items: center;
+}
+
+.book-card-button {
+  margin: 5px;
+  margin-top: 15px;
+  font-size: 22px;
+  background-color: lightgrey;
+  width: 100%;
 }
 
 /* Join Page */

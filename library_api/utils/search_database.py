@@ -9,6 +9,7 @@ def initialize_book(iris_native, book_db, id):
     book.publisher = iris_native.get(book_db, id, "publisher")
     book.page_count = iris_native.get(book_db, id, "page_count")
     book.pic_url = iris_native.get(book_db, id, "pic_url")
+    book.available = iris_native.get(book_db, id, "available")
 
     return book
 
