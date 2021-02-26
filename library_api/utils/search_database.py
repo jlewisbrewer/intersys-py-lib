@@ -42,7 +42,7 @@ def get_book_by_params(iris_native, books, book_db, args):
         count = 0
         for item in args.keys():
             # Need try catch here
-            if args[item] in iris_native.get(book_db, k, item):
+            if args[item].lower() in iris_native.get(book_db, k, item).lower():
                 count += 1
         if count == l:
             ids.append(k)             
