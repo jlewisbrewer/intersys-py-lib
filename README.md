@@ -24,5 +24,5 @@ This project requires an instance of InterSystems IRIS running on your machine. 
 
 This project uses `pipenv` to install dependencies. You can install `pipenv` by typing `python[3] -m pip install pipenv` in a terminal on your system or virtual environment. After installation, you can run the program by navigating to the `library_api` folder and typing `pipenv run python[3] server.py` in the terminal. This should download the required modules and start a server.
 
-To run the frontend, navigate to `libary_spa` folder and type `npm run start` in a terminal. Go to `http://localhost:3000/` to interact with the client locally.
+To run the frontend, navigate to `libary_spa` folder, and type `npm run build` in a terminal to build the project, and then type `npm run start`. Go to `http://localhost:3000/` to interact with the client locally.
 
