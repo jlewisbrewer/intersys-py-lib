@@ -1,2 +1,3 @@
-production: false
 database: "^books"
+config: "connection.cfg"
+devconfig: "dev.cfg"
